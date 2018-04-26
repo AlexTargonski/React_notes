@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Board   from './board'
 import '../index.css';
 
 class Index extends Component {
@@ -33,10 +34,6 @@ addNote(e) {
 }
 
 render() {
-  console.log(this.state)
-  const notes = this.state.notes.map((note, index) => {
-      return(<li key={index}><a href="#"><p>{note.text}</p></a></li>)
-    })
 
   return (
       <div>
@@ -44,9 +41,9 @@ render() {
           <input ref={(a) => this._inputElement = a} />
           <button> + </button>
         </form>
-        <ul>
-          {notes}
-        </ul>
+        <Board
+          notes = {this.state.notes}
+        />
       </div>
     );
   }
