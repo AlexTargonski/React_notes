@@ -30,7 +30,16 @@ module.exports = {
          use: [
            'file-loader'
          ]
-       }
+       },
+       {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {}
+            }
+          ]
+        }
     ]
   },
   plugins: [
