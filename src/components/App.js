@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Board   from './board'
-import '../index.css';
+import '../index.scss';
 
 class Index extends Component {
   constructor(props) {

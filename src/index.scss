@@ -1,3 +1,5 @@
+@import "./font.scss";
+
 button {
   background: green;
   background: #81e367;
@@ -21,7 +23,6 @@ input {
   padding:0;
 }
 body{
-  font-family:arial,sans-serif;
   font-size:100%;
   margin:1em;
   background: #ececec;
@@ -62,7 +63,7 @@ ul li h2{
   padding-bottom:10px;
 }
 ul li p{
-  font-family:"Reenie Beanie",arial,sans-serif;
+  font-family: 'Indie Flower';
   font-size:180%;
 }
 ul li a{
