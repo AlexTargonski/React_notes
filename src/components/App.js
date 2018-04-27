@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Board   from './board'
+import Board                from './board'
 import '../index.scss';
 
 class Index extends Component {
@@ -28,21 +28,30 @@ addNote(e) {
     this._inputElement.value = "";
   }
 
-  console.log(this.state.notes);
-
   e.preventDefault();
 }
+
+  handleDelete(id) {
+    const noteDelete = this.state.notes.filter((note) => {
+      if(note.id !== id) return note;
+    });
+
+    this.setState({notes: noteDelete});
+  }
 
 render() {
 
   return (
       <div>
-        <form onSubmit={this.addNote}>
-          <input ref={(a) => this._inputElement = a} />
-          <button> + </button>
-        </form>
+        <div className="header">
+          <form onSubmit={this.addNote}>
+            <input ref={(a) => this._inputElement = a} />
+            <button> + </button>
+          </form>
+        </div>
         <Board
           notes = {this.state.notes}
+          delete = {this.handleDelete.bind(this)}
         />
       </div>
     );

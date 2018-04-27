@@ -5,7 +5,7 @@ class Board extends Component {
 
 render() {
   const notes = this.props.notes.map((note, index) => {
-      return(<li key={index}><a href="#"><p>{note.text}</p></a></li>)
+      return(<li key={index} onClick={() => this.props.delete(note.id)}><a href="#"><p>{note.text}</p></a></li>)
     })
 
   return (

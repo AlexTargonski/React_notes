@@ -10,7 +10,7 @@ button {
 
 input {
   border-radius: 15px;
-  border: none;
+  border: 1px #81e367 solid;
   height: 40px;
   margin-right: 10px;
   width: 35%;
@@ -24,7 +24,6 @@ input {
 
 body {
   font-size: 100%;
-  margin: 1em;
   background: url('./board.jpg');
 }
 
@@ -119,4 +118,13 @@ ol {
       color: #fff;
     }
   }
+}
+
+.header {
+  height: 45px;
+  background: white;
+  padding: 20px;
+  -webkit-box-shadow: -1px 7px 26px -5px rgba(0,0,0,0.47);
+  -moz-box-shadow: -1px 7px 26px -5px rgba(0,0,0,0.47);
+  box-shadow: -1px 7px 26px -5px rgba(0,0,0,0.47);
 }
