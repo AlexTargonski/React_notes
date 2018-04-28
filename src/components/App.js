@@ -6,7 +6,8 @@ class Index extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    notes: []
+    notes: [],
+    search: ''
   };
 
   this.addNote = this.addNote.bind(this);
@@ -39,22 +40,35 @@ addNote(e) {
     this.setState({notes: noteDelete});
   }
 
-render() {
+  updateSearch(e) {
+    this.setState({search: e.target.value.substr(0, 20)});
+  }
 
-  return (
-      <div>
-        <div className="header">
-          <form onSubmit={this.addNote}>
-            <input ref={(a) => this._inputElement = a} />
-            <button> + </button>
-          </form>
+  render() {
+
+    return (
+        <div>
+          <div className="header">
+            <form onSubmit={this.addNote}>
+              <input
+                placeholder = "Search..."
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+              />
+              <input
+                placeholder = "Type text here..."
+                ref={(a) => this._inputElement = a}
+              />
+              <button> + </button>
+            </form>
+          </div>
+          <Board
+            notes = {this.state.notes}
+            delete = {this.handleDelete.bind(this)}
+            searchTerm = {this.state.search}
+          />
         </div>
-        <Board
-          notes = {this.state.notes}
-          delete = {this.handleDelete.bind(this)}
-        />
-      </div>
-    );
+      );
   }
 }
 
